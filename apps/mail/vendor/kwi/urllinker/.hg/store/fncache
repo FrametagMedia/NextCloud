@@ -1,0 +1,17 @@
+data/lib/UrlLinkerInterface.php.i
+data/lib/validTlds.php.i
+data/UrlLinker-example.php.i
+data/UrlLinker.php.i
+data/tests/functions/HtmlEscapeAndLinkUrlsTest.php.i
+data/README.rst.i
+data/tests/bootstrap.php.i
+data/tests/UrlLinkerTestCase.php.i
+data/phpunit.xml.dist.i
+data/.hgignore.i
+data/tests/functions/LinkUrlsInTrustedHtmlTest.php.i
+data/phpunit-logging.xml.dist.i
+data/lib/UrlLinker.php.i
+data/tests/UrlLinkerEscapingHtmlTest.php.i
+data/tests/UrlLinkerInTrustedHtmlTest.php.i
+data/tests/UrlLinkerTest.php.i
+data/composer.json.i

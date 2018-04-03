@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<info>
+	<id>spreed</id>
+	<name>Video calls</name>
+	<summary><![CDATA[Video & audio-conferencing using WebRTC]]></summary>
+	<description><![CDATA[Video & audio-conferencing using WebRTC
+
+* 👥 **Private, group and public calls!** Just invite somebody, a whole group or send a public link to invite to a call.
+* 💻 **Screen sharing!** Share your screen with participants of your call.
+* 🚀 **Integration with other Nextcloud apps!** Currently Contacts and users – more to come.
+* 🙈 **We’re not reinventing the wheel!** Based on the great [simpleWebRTC](https://simplewebrtc.com/) library.
+
+And in the works for the [coming versions](https://github.com/nextcloud/spreed/milestones/):
+
+* 💬 [Chat integration](https://github.com/nextcloud/spreed/issues/35)
+* ✋ [Federated calls](https://github.com/nextcloud/spreed/issues/21), to call people on other Nextclouds
+
+**Known issues:**
+
+* [HTTP/2.0 is currently not supported](https://github.com/nextcloud/spreed/issues/225)
+
+	]]></description>
+	<licence>AGPL</licence>
+
+	<author>Ivan Sein</author>
+	<author>Jan-Christoph Borchardt</author>
+	<author>Lukas Reschke</author>
+	<author>Morris Jobke</author>
+
+	<website>https://github.com/nextcloud/spreed</website>
+	<bugs>https://github.com/nextcloud/spreed/issues</bugs>
+	<repository type="git">https://github.com/nextcloud/spreed.git</repository>
+
+	<category>multimedia</category>
+	<category>social</category>
+
+	<screenshot>https://raw.githubusercontent.com/nextcloud/spreed/master/docs/spreed-call.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/spreed/master/docs/spreed-screensharing.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/nextcloud/spreed/master/docs/spreed-contacts-menu.png</screenshot>
+
+	<version>2.0.2</version>
+
+	<dependencies>
+		<nextcloud min-version="12" max-version="12" />
+	</dependencies>
+	<types>
+		<prevent_group_restriction />
+	</types>
+	<namespace>Spreed</namespace>
+
+	<navigations>
+		<navigation>
+			<name>Video calls</name>
+			<route>spreed.page.index</route>
+			<order>3</order>
+		</navigation>
+	</navigations>
+
+	<settings>
+		<admin>OCA\Spreed\Settings\Admin</admin>
+	</settings>
+
+	<activity>
+		<settings>
+			<setting>OCA\Spreed\Activity\Setting</setting>
+		</settings>
+
+		<providers>
+			<provider>OCA\Spreed\Activity\Provider</provider>
+		</providers>
+	</activity>
+
+	<repair-steps>
+		<post-migration>
+			<step>OCA\Spreed\Migration\EmptyNameInsteadOfRandom</step>
+			<step>OCA\Spreed\Migration\FillRoomTokens</step>
+		</post-migration>
+	</repair-steps>
+	<contactsmenu>
+		<provider>OCA\Spreed\ContactsMenu\Providers\CallProvider</provider>
+	</contactsmenu>
+</info>
